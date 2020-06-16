@@ -1,0 +1,19 @@
+version: "3"
+services:
+  app:
+    image: deltan123/spring-boot-mongodb-example:0.0.1-SNAPSHOT
+    ports:
+    - 8080:8080
+    depends_on:
+    - mongodb
+    environment:
+      RDS_HOSTNAME: mongodb
+    links:
+    - mongodb
+  mongodb:
+    image: mongo
+    container_name: mongo
+    ports:
+    - 27017:27017
+    volumes:
+      - ./_data:/data/db

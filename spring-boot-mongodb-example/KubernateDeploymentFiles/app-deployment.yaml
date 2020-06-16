@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: app
+  name: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: app
+  template:
+    metadata:
+      labels:
+        io.kompose.service: app
+    spec:
+      containers:
+      - env:
+        - name: RDS_HOSTNAME
+          value: mongodb
+        image: deltan123/spring-boot-mongodb-example:0.0.1-SNAPSHOT
+        imagePullPolicy: ""
+        name: app
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always
