@@ -21,9 +21,9 @@ spec:
         - containerPort: 27017
         volumeMounts:
         - mountPath: /data/db
-          name: mongodata
+          name: storage
       restartPolicy: Always
       volumes:
-      - name: mongodata
+      - name: storage
         persistentVolumeClaim:
-          claimName: mongodata
+          claimName: mongo-pvc

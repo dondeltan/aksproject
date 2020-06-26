@@ -1,5 +1,6 @@
 package com.techprimers.mongodb.springbootmongodbexample.resource;
 
+
 import com.techprimers.mongodb.springbootmongodbexample.document.Users;
 import com.techprimers.mongodb.springbootmongodbexample.repository.UserRepository;
 import org.springframework.web.bind.annotation.GetMapping;
